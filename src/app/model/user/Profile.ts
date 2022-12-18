@@ -8,7 +8,7 @@ class Profile extends AbstractModel
    @Column()
    fullName: string
 
-   @Column()
+   @Column({unique: true})
    avatarUrl: string
 
    /**
