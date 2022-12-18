@@ -1,3 +1,4 @@
+import "reflect-metadata"
 import express, {Application, json, urlencoded} from "express"
 import * as http from "http"
 import {MariadbDataSource} from "./MariadbDataSource"
