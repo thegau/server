@@ -5,10 +5,10 @@ import {Profile} from "./Profile"
 @Entity()
 class User extends AbstractModel
 {
-   @Column()
+   @Column({unique: true})
    username: string
 
-   @Column()
+   @Column({unique: true})
    email: string
 
    @Column()
