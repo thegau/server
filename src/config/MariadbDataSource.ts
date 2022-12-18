@@ -1,13 +1,9 @@
 import "reflect-metadata"
 import { DataSource } from "typeorm"
+import {DatabaseConfig} from "../env"
 
 const MariadbDataSource = new DataSource({
-    type: "mariadb",
-    host: "localhost",
-    port: 3306,
-    username: "test",
-    password: "test",
-    database: "test",
+    ...DatabaseConfig,
     synchronize: true,
     logging: false,
     entities: [],

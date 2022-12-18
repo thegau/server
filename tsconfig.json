@@ -4,7 +4,9 @@
          "es5",
          "es6"
       ],
+      "esModuleInterop": true,
       "strict": true,
+      "strictPropertyInitialization": false,
       "target": "es5",
       "module": "commonjs",
       "moduleResolution": "node",
