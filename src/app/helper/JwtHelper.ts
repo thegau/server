@@ -11,7 +11,13 @@ interface IJwtHelper
 @autoInjectable()
 class JwtHelper implements IJwtHelper
 {
+   encode(payload: any, options?: SignOptions): string {
+      return sign(payload, JwtConfig.authSecret, options)
+   }
 
+   decode(): any {
+
+   }
 }
 
-export {JwtHelper}
+export {JwtHelper, IJwtHelper}
