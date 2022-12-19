@@ -3,8 +3,8 @@ import express, {Application, json, urlencoded} from "express"
 import * as http from "http"
 import {MariadbDataSource} from "./MariadbDataSource"
 import {ServerConfig} from "../env"
-import {AuthController} from "../app/controller";
-import {container} from "tsyringe";
+import {AuthController} from "../app/controller"
+import {container} from "tsyringe"
 
 class Server
 {
