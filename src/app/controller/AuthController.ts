@@ -4,6 +4,7 @@ import {AuthService, IAuthService} from "../service"
 import {autoInjectable} from "tsyringe"
 import {AuthToken} from "../@type"
 import {User} from "../model"
+import {HttpStatus} from "../constant"
 
 @autoInjectable()
 class AuthController extends AbstractController
@@ -26,9 +27,12 @@ class AuthController extends AbstractController
       newUser.email = req.body.email
       newUser.password = req.body.password
 
-      return res.send(await this.authService.signUp(newUser))
-   }
+      const authToken: AuthToken = await this.authService.signUp(newUser)
 
+      return res
+         .status(HttpStatus.CREATED)
+         .send(authToken)
+   }
 }
 
 export {AuthController}
